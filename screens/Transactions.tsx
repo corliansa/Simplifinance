@@ -13,6 +13,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { PieChart } from "react-native-chart-kit";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Swipeable } from "react-native-gesture-handler";
+import Dialog from "react-native-dialog";
+import { RadioGroup, RadioButton, Picker } from "react-native-ui-lib";
 import {
 	filterTransactions,
 	sortTransactions,
@@ -34,6 +36,7 @@ export default function Transactions({ navigation }: any) {
 	const [grouping, setGrouping] = useState<"category" | "date">("date");
 	const [filter, setFilter] = useState({});
 	const [sorting, setSorting] = useState({});
+	const [showSorter, setShowSorter] = useState<boolean>(false);
 
 	const { startDate, endDate } = getMonthRange(new Date().getMonth() + current);
 	const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -289,6 +292,66 @@ export default function Transactions({ navigation }: any) {
 		);
 	};
 
+	const SorterButton = () => {
+		return (
+			<TouchableOpacity
+				style={{
+					position: "absolute",
+					bottom: 80,
+					right: 20,
+					backgroundColor: "#fff",
+					borderRadius: 50,
+					width: 50,
+					height: 50,
+					alignItems: "center",
+					justifyContent: "center",
+					shadowColor: "#000",
+					shadowOffset: {
+						width: 0,
+						height: 2,
+					},
+					shadowOpacity: 0.25,
+					shadowRadius: 3.84,
+					elevation: 5,
+				}}
+				onPress={() => setShowSorter(!showSorter)}
+			>
+				<Ionicons name="ellipsis-vertical" size={32} color="#041C32" />
+			</TouchableOpacity>
+		);
+	};
+
+	const SorterModal = () => {
+		const [sortBy, setSortBy] = useState<
+			"date" | "amount" | "name" | "category"
+		>("date");
+		const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+		return (
+			<Dialog.Container
+				visible={showSorter}
+				onBackdropPress={() => setShowSorter(false)}
+			>
+				<Dialog.Title>Preferences</Dialog.Title>
+				<RadioGroup
+					initialValue={sortOrder}
+					onValueChange={(value: "asc" | "desc") => setSortOrder(value)}
+					style={{
+						flexDirection: "row",
+						marginHorizontal: 20,
+						justifyContent: "space-evenly",
+						marginBottom: 20,
+					}}
+				>
+					<Text style={{ alignSelf: "center" }}>Order by</Text>
+					<RadioButton color="grey" value="asc" label="Asc" />
+					<RadioButton color="grey" value="desc" label="Desc" />
+				</RadioGroup>
+				<Dialog.Button label="Cancel" onPress={() => setShowSorter(false)} />
+				<Dialog.Button label="Apply" onPress={() => setShowSorter(false)} />
+			</Dialog.Container>
+		);
+	};
+
 	return (
 		<View style={styles.container}>
 			<SafeAreaView style={styles.main}>
@@ -351,6 +414,8 @@ export default function Transactions({ navigation }: any) {
 					/>
 				</View>
 			</SafeAreaView>
+			<SorterModal />
+			<SorterButton />
 			<FloatingButton
 				icon="add"
 				onPress={() => navigation.navigate("AddTransaction")}

@@ -17,13 +17,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "xyz.corliansa.simplifinance",
+      "buildNumber": "1.0.1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#041C32"
-      }
+      },
+      "permissions": [],
+      "package": "xyz.corliansa.simplifinance",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
