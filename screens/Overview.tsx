@@ -4,7 +4,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FloatingButton from "../components/FloatingButton";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
-	example_transactions,
 	filterTransactions,
 	getCategories,
 	getTotalAmount,

@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
 	SectionList,
 	StyleSheet,
@@ -16,7 +16,6 @@ import { Swipeable } from "react-native-gesture-handler";
 import {
 	filterTransactions,
 	sortTransactions,
-	example_transactions,
 	getTotalAmount,
 	formatMoney,
 	getCategories,
@@ -63,17 +62,21 @@ export default function Transactions({ navigation }: any) {
 	const categories = getCategories(
 		filterTransactions(sortedTransactions, { type: "expense" })
 	);
-	const amounts = categories.map((category) => {
-		return {
-			name: category,
-			amount: Math.abs(
-				getTotalAmount(filterTransactions(sortedTransactions, { category }))
-			),
-			color: generateRandomColor(category),
-			legendFontColor: "#7F7F7F",
-			legendFontSize: 14,
-		};
-	});
+	const amounts = useCallback(
+		() =>
+			categories.map((category) => {
+				return {
+					name: category,
+					amount: Math.abs(
+						getTotalAmount(filterTransactions(sortedTransactions, { category }))
+					),
+					color: generateRandomColor(category),
+					legendFontColor: "#7F7F7F",
+					legendFontSize: 14,
+				};
+			}),
+		[categories, sortedTransactions]
+	);
 
 	const loadTransactionsAsync = async () => {
 		try {
@@ -315,7 +318,7 @@ export default function Transactions({ navigation }: any) {
 					{amounts.length > 0 && (
 						<Pressable onPress={() => setDetailed(!detailed)}>
 							<PieChart
-								data={amounts}
+								data={amounts()}
 								width={Dimensions.get("window").width - 40}
 								height={Dimensions.get("window").height / 4}
 								chartConfig={{

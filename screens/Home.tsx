@@ -6,7 +6,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StatusBar } from "expo-status-bar";
 import {
 	filterTransactions,
-	example_transactions,
 	getTotalAmount,
 	getMonthRange,
 	formatMoney,
