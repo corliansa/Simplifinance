@@ -17,17 +17,5 @@ jobs:
       with:
         node-version: 16.x
         cache: 'npm'
-    - run: |
-          if [ -e yarn.lock ]; then
-          yarn install --frozen-lockfile
-          elif [ -e package-lock.json ]; then
-          npm ci
-          else
-          npm i
-          fi
-    - run: |
-          if [ -e yarn.lock ]; then
-          yarn test
-          else
-          npm test
-          fi
+    - run: yarn install --frozen-lockfile
+    - run: yarn test
