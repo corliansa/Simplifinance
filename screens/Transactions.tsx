@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
 	SectionList,
 	StyleSheet,
@@ -62,7 +62,7 @@ export default function Transactions({ navigation }: any) {
 	const categories = getCategories(
 		filterTransactions(sortedTransactions, { type: "expense" })
 	);
-	const amounts = useCallback(
+	const amounts = useMemo(
 		() =>
 			categories.map((category) => {
 				return {
@@ -317,8 +317,19 @@ export default function Transactions({ navigation }: any) {
 				<View style={{ marginTop: 10 }}>
 					{amounts.length > 0 && (
 						<Pressable onPress={() => setDetailed(!detailed)}>
+							<Text
+								style={{
+									marginTop: 10,
+									textAlign: "center",
+									fontSize: 18,
+									fontWeight: "400",
+									color: "lightgrey",
+								}}
+							>
+								Expense Chart
+							</Text>
 							<PieChart
-								data={amounts()}
+								data={amounts}
 								width={Dimensions.get("window").width - 40}
 								height={Dimensions.get("window").height / 4}
 								chartConfig={{

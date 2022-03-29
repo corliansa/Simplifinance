@@ -125,10 +125,10 @@ export default function Overview({ navigation }: any) {
 					) : null}
 				</View>
 			</SafeAreaView>
-			<FloatingButton
+			{/* <FloatingButton
 				icon="ellipsis-vertical"
 				onPress={() => navigation.navigate("Transactions")}
-			/>
+			/> */}
 		</View>
 	);
 }

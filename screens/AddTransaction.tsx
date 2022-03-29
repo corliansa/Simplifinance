@@ -17,7 +17,9 @@ import {
 	RadioButton,
 	Picker,
 	Button,
+	Incubator,
 } from "react-native-ui-lib";
+const { TextField } = Incubator;
 import { createTransaction, Categories, Transaction } from "../libraries";
 
 export default function AddTransaction({ navigation, route }: any) {
@@ -112,12 +114,13 @@ export default function AddTransaction({ navigation, route }: any) {
 
 	const renderPrice = () => {
 		return (
-			<Dialog.Input
+			<TextField
 				label="Amount*"
 				value={amount}
 				placeholder="0.00"
-				wrapperStyle={{ backgroundColor: "transparent" }}
+				containerStyle={styles.textfield}
 				style={{ color: "lightgrey" }}
+				labelColor="grey"
 			/>
 		);
 	};
@@ -137,13 +140,14 @@ export default function AddTransaction({ navigation, route }: any) {
 				>
 					{txPayload ? "Edit" : "Add"} Transaction
 				</Text>
-				<Dialog.Input
+				<TextField
 					label="Name*"
 					value={name}
 					placeholder="New Transaction"
 					onChangeText={(value) => setName(value)}
-					wrapperStyle={{ backgroundColor: "transparent" }}
+					containerStyle={styles.textfield}
 					style={{ color: "lightgrey" }}
+					labelColor="grey"
 				/>
 				<MaskedInput
 					renderMaskedText={renderPrice}
@@ -153,13 +157,14 @@ export default function AddTransaction({ navigation, route }: any) {
 						setAmount(value);
 					}}
 				/>
-				<Dialog.Input
+				<TextField
 					label="Description"
 					value={desc}
 					placeholder="Some description..."
 					onChangeText={(value) => setDesc(value)}
-					wrapperStyle={{ backgroundColor: "transparent" }}
+					containerStyle={styles.textfield}
 					style={{ color: "lightgrey" }}
+					labelColor="grey"
 				/>
 				<RadioGroup
 					initialValue={type}
@@ -169,6 +174,7 @@ export default function AddTransaction({ navigation, route }: any) {
 						marginHorizontal: 20,
 						justifyContent: "space-evenly",
 						marginBottom: 20,
+						marginTop: 5,
 					}}
 				>
 					<RadioButton
@@ -242,5 +248,12 @@ const styles = StyleSheet.create({
 		flex: 1,
 		margin: 20,
 		justifyContent: "center",
+	},
+	textfield: {
+		marginHorizontal: 20,
+		marginBottom: 20,
+		paddingBottom: 10,
+		borderBottomWidth: 1,
+		borderColor: "lightgrey",
 	},
 });

@@ -109,7 +109,6 @@ describe("Transaction test", () => {
 			startDate: new Date(2022, 1),
 			endDate: new Date(2022, 2),
 		});
-		console.log(filtered);
 		expect(getTotalAmount(filtered)).toBe(-570);
 	});
 	it("should sort transactions", () => {
@@ -117,7 +116,6 @@ describe("Transaction test", () => {
 			sortBy: "amount",
 			order: "desc",
 		});
-		expect(sorted).toHaveLength(8);
 		expect(sorted[0].amount).toBe(800);
 	});
 });
