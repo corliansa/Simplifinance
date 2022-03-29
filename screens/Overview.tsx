@@ -84,21 +84,36 @@ export default function Overview({ navigation }: any) {
 					borderTopWidth: 2,
 				}}
 			>
-				<Text style={{ fontSize: 24, fontWeight: "bold", color: "white" }}>
-					Total
-				</Text>
-				<Text
-					style={{
-						fontSize: 24,
-						fontWeight: "bold",
-						color:
-							Math.abs(incomeAmount) - Math.abs(expenseAmount) < 0
-								? "coral"
-								: "lightblue",
-					}}
-				>
-					{formatMoney(Math.abs(incomeAmount) - Math.abs(expenseAmount))}
-				</Text>
+				{amounts?.length > 0 ? (
+					<>
+						<Text style={{ fontSize: 24, fontWeight: "bold", color: "white" }}>
+							Total
+						</Text>
+						<Text
+							style={{
+								fontSize: 24,
+								fontWeight: "bold",
+								color:
+									Math.abs(incomeAmount) - Math.abs(expenseAmount) < 0
+										? "coral"
+										: "lightblue",
+							}}
+						>
+							{formatMoney(Math.abs(incomeAmount) - Math.abs(expenseAmount))}
+						</Text>
+					</>
+				) : (
+					<Text
+						style={{
+							fontSize: 24,
+							fontWeight: "400",
+							color: "white",
+							margin: 4,
+						}}
+					>
+						No transactions found
+					</Text>
+				)}
 			</View>
 		);
 	};
