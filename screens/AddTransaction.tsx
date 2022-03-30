@@ -206,6 +206,8 @@ export default function AddTransaction({ navigation, route }: any) {
 						titleStyle: { color: "lightgrey" },
 					}}
 					pickerModalProps={{ overlayBackgroundColor: "#111" }}
+					// @ts-expect-error
+					listProps={{ style: { marginBottom: 180 } }}
 					style={{ color: "lightgrey" }}
 				>
 					{options.map((option) => (

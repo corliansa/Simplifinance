@@ -1,38 +1,36 @@
 {
-  "expo": {
-    "name": "Simplifinance",
-    "slug": "Simplifinance",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#041C32"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "xyz.corliansa.simplifinance",
-      "buildNumber": "1.0.2"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#041C32"
-      },
-      "permissions": [],
-      "package": "xyz.corliansa.simplifinance",
-      "versionCode": 3
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "description": "Simplifinance is compact, fun and easy to use. \nSimply manage your money with Simplifinance!"
-  }
+	"expo": {
+		"name": "Simplifinance",
+		"slug": "Simplifinance",
+		"version": "1.0.2",
+		"orientation": "portrait",
+		"icon": "./assets/icon.png",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#101010"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "xyz.corliansa.simplifinance",
+			"buildNumber": "1.0.2"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#101010"
+			},
+			"permissions": [],
+			"package": "xyz.corliansa.simplifinance",
+			"versionCode": 3
+		},
+		"web": {
+			"favicon": "./assets/favicon.png"
+		},
+		"description": "Simplifinance is compact, fun and easy to use. \nSimply manage your money with Simplifinance!"
+	}
 }

@@ -3787,10 +3787,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:~2.13.0":
-  version: 2.13.0
-  resolution: "commander@npm:2.13.0"
-  checksum: b23e2de09428e3852e881c3e265c70438ca038c834744479b72dde0bbc570f45c7f1ea2feea27fbe26382d2cbf6fb7b1963d7dee2c08b3f4adc95dbc45d977f5
+"commander@npm:~2.14.1":
+  version: 2.14.1
+  resolution: "commander@npm:2.14.1"
+  checksum: 26bd49febeac8efabb7488fb5a4a2480b04bc4c4eef3c50da93eead72959f7a5232d003deda5b9761937205721274e80108f6d1d2b45ae7a8387cfb92031084e
   languageName: node
   linkType: hard
 
@@ -4282,9 +4282,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.84":
-  version: 1.4.98
-  resolution: "electron-to-chromium@npm:1.4.98"
-  checksum: 677854f189d4a3aee5acc23a0edc39a4d43f1a81b7797bb45a64717bbc9f48fca4569eae62ceb7b3d7e10735e6f0925e999f6dc6c89c6575f1b701959fb5e6b5
+  version: 1.4.102
+  resolution: "electron-to-chromium@npm:1.4.102"
+  checksum: 0df8d3d349e33f454b7b98db8397fffd29f17814a88bba82b9d49f562d3b87fba017115fed074ff2ee89ef00db0dfb5765eac35929fb0e03bc203dd1fa33d5a3
   languageName: node
   linkType: hard
 
@@ -4709,8 +4709,8 @@ __metadata:
   linkType: hard
 
 "expo-updates@npm:~0.11.6":
-  version: 0.11.6
-  resolution: "expo-updates@npm:0.11.6"
+  version: 0.11.7
+  resolution: "expo-updates@npm:0.11.7"
   dependencies:
     "@expo/config": ^6.0.6
     "@expo/config-plugins": ^4.0.2
@@ -4723,7 +4723,7 @@ __metadata:
     uuid: ^3.4.0
   peerDependencies:
     expo: "*"
-  checksum: 5033037ca2055b6795d10e36ed789a4d004d7009f26b46f29a850d5b36f69f423d26a6d463c390784fb11c9317974b64d850f1fa7c0306d75b094171865cf69e
+  checksum: 6354efd619402a8575dc110bfd41b3596c16033a7ad8663437e4873929a717e66951980d9b477dfb69f6ab0a072102154bde0ad54c812cec3c9d2e3db891e5e8
   languageName: node
   linkType: hard
 
@@ -7011,9 +7011,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^7.7.1":
-  version: 7.7.1
-  resolution: "lru-cache@npm:7.7.1"
-  checksum: f362c5a2cfa8ad6fe557ec43dc1b7a9695cce84a5652a43ff813609f782f5da576631e7dfad41878bf19a7a69438f38375178635ee80de269aa314280ca2f59e
+  version: 7.7.3
+  resolution: "lru-cache@npm:7.7.3"
+  checksum: 1789743a68a8db052564a9dd020f04ba0712327a43e08babc94f05e1c56ef75a03514cf4acab75ae90e3d5d16ae02c7bf0f34754968dc5b8c2c3bc2d92c21745
   languageName: node
   linkType: hard
 
@@ -7037,8 +7037,8 @@ __metadata:
   linkType: hard
 
 "make-fetch-happen@npm:^10.0.3":
-  version: 10.1.0
-  resolution: "make-fetch-happen@npm:10.1.0"
+  version: 10.1.1
+  resolution: "make-fetch-happen@npm:10.1.1"
   dependencies:
     agentkeepalive: ^4.2.1
     cacache: ^16.0.2
@@ -7056,7 +7056,7 @@ __metadata:
     promise-retry: ^2.0.1
     socks-proxy-agent: ^6.1.1
     ssri: ^8.0.1
-  checksum: fae1c2f255f6467bf6731344c2c04dd0e1f1899d8ae4698d98e2c86131ba899a418746ebc564493b85d1651d43c93b49f7825a2773edda4285a1c4c5e5ba9168
+  checksum: 3f1b0acc2032061a01bb44458e07bbd5721e3fbfb5a1620eef38e7c7d022f2141373fc41a8056685441c70444d94e1479485492ac6e9e8ad5de87ea29ca9d9e4
   languageName: node
   linkType: hard
 
@@ -8540,12 +8540,12 @@ __metadata:
   linkType: hard
 
 "react-devtools-core@npm:^4.6.0":
-  version: 4.24.2
-  resolution: "react-devtools-core@npm:4.24.2"
+  version: 4.24.3
+  resolution: "react-devtools-core@npm:4.24.3"
   dependencies:
     shell-quote: ^1.6.1
     ws: ^7
-  checksum: 5f6fb369e5a6c76696aae0949eada6bc13a8a814131ca8df5b71b4431f8d016553ad7a7c1db7ef3fd5686593451841d64ad6646786e3f9695577de774e723291
+  checksum: 69b322aefb172e7dd25eab64d074d86f2d1de20b8c09ebd3ba857f782c3ff7d1e000eaccfd9b1ac320ebb1734991a3331d0a5ef174f6a01cb8956a0cc0464387
   languageName: node
   linkType: hard
 
@@ -10323,14 +10323,14 @@ __metadata:
   linkType: hard
 
 "uglify-es@npm:^3.1.9":
-  version: 3.3.9
-  resolution: "uglify-es@npm:3.3.9"
+  version: 3.3.10
+  resolution: "uglify-es@npm:3.3.10"
   dependencies:
-    commander: ~2.13.0
+    commander: ~2.14.1
     source-map: ~0.6.1
   bin:
     uglifyjs: bin/uglifyjs
-  checksum: f2de133ba71f05aca442db2c31a2f2614201e5b540948f022f5b53cd39b6b1b43a7db7cc2aa9917383bbb26e8043947fce35867cd1edcf2444854cb7fae0fa99
+  checksum: 22b028b6454c4d684c76617e9ac5b8da0e56611b32cd5d89e797225d6f1022f697a5642d9084319436df3aed462225749f8287d37bf67dccda1ac9d0365dd950
   languageName: node
   linkType: hard
 
@@ -10467,13 +10467,11 @@ __metadata:
   linkType: hard
 
 "use-subscription@npm:^1.0.0":
-  version: 1.5.1
-  resolution: "use-subscription@npm:1.5.1"
-  dependencies:
-    object-assign: ^4.1.1
+  version: 1.6.0
+  resolution: "use-subscription@npm:1.6.0"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-  checksum: 96e64977a573244fd11350a3141b2cf57fb72dd9dd902f387c8a0a565d0a948bc81588bd7378c6ef6defc0d1119f37f73aac4a7a287c8443abd444bd4e7bbea8
+    react: ^18.0.0
+  checksum: 0ce15a3ed1f66f78cb2d7a83ff4980e2ac93054b0bcbdc4e492e77fed599233372aaaf9c9fd9b370484c491c5aee0b980859db1108ad63ee4cdba0f468c4f5d1
   languageName: node
   linkType: hard
 
