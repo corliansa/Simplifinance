@@ -32,8 +32,11 @@ export default function Overview({ navigation }: any) {
 			const tx = await AsyncStorage.getItem("transactions");
 			if (tx) {
 				if (tx != JSON.stringify(transactions)) setTransactions(JSON.parse(tx));
+			} else {
+				setTransactions([]);
 			}
 		} catch (error) {
+			setTransactions([]);
 			console.log(error);
 		}
 	};
@@ -81,7 +84,7 @@ export default function Overview({ navigation }: any) {
 					justifyContent: "space-between",
 					marginTop: 10,
 					borderTopColor: "white",
-					borderTopWidth: 2,
+					borderTopWidth: amounts?.length > 0 ? 2 : 0,
 				}}
 			>
 				{amounts?.length > 0 ? (

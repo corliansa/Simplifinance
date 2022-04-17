@@ -32,8 +32,11 @@ export default function Home({ navigation }: any) {
 							endDate,
 						})
 					);
+			} else {
+				setTransactions([]);
 			}
 		} catch (error) {
+			setTransactions([]);
 			console.log(error);
 		}
 	};
