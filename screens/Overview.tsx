@@ -32,6 +32,7 @@ export default function Overview({ navigation }: any) {
 			const tx = await AsyncStorage.getItem("transactions");
 			if (tx) {
 				if (tx != JSON.stringify(transactions)) setTransactions(JSON.parse(tx));
+				else setTransactions([]);
 			} else {
 				setTransactions([]);
 			}
@@ -101,6 +102,7 @@ export default function Overview({ navigation }: any) {
 										? "coral"
 										: "lightblue",
 							}}
+							testID="overviewTotalAmountText"
 						>
 							{formatMoney(Math.abs(incomeAmount) - Math.abs(expenseAmount))}
 						</Text>
@@ -113,6 +115,7 @@ export default function Overview({ navigation }: any) {
 							color: "white",
 							margin: 4,
 						}}
+						testID="overviewNoTransactionsText"
 					>
 						No transactions found
 					</Text>
@@ -131,13 +134,16 @@ export default function Overview({ navigation }: any) {
 					ListFooterComponent={listFooterComponent}
 				/>
 				<View style={{ justifyContent: "flex-end" }}>
-					<Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+					<Text
+						style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
+						testID="overviewTotalText"
+					>
 						{`In total, you have spent ${formatMoney(
 							Math.abs(expenseAmount)
 						)} out of ${formatMoney(Math.abs(incomeAmount))} of your income.`}
 					</Text>
 					{Math.abs(incomeAmount) - Math.abs(expenseAmount) < 0 ? (
-						<Text style={{ color: "coral" }}>
+						<Text style={{ color: "coral" }} testID="overviewExtraText">
 							Uh-oh. Looks like need to work on your money management more!
 						</Text>
 					) : null}

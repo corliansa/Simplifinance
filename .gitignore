@@ -22,3 +22,4 @@ web-build/
 .DS_Store
 
 .env
+e2e/bin/*

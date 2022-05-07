@@ -11,7 +11,8 @@
 			"backgroundColor": "#101010"
 		},
 		"updates": {
-			"fallbackToCacheTimeout": 0
+			"fallbackToCacheTimeout": 0,
+			"url": "https://u.expo.dev/9275b1ca-ee39-4a7c-8f52-8d058afaacc4"
 		},
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
@@ -31,6 +32,9 @@
 		"web": {
 			"favicon": "./assets/favicon.png"
 		},
-		"description": "Simplifinance is compact, fun and easy to use. \nSimply manage your money with Simplifinance!"
+		"description": "Simplifinance is compact, fun and easy to use. \nSimply manage your money with Simplifinance!",
+		"runtimeVersion": {
+			"policy": "sdkVersion"
+		}
 	}
 }

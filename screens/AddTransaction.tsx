@@ -121,6 +121,7 @@ export default function AddTransaction({ navigation, route }: any) {
 				containerStyle={styles.textfield}
 				style={{ color: "lightgrey" }}
 				labelColor="grey"
+				testID="amountField"
 			/>
 		);
 	};
@@ -137,6 +138,7 @@ export default function AddTransaction({ navigation, route }: any) {
 						color: "lightgrey",
 					}}
 					onPress={() => Keyboard.dismiss()}
+					testID="addTransactionTitle"
 				>
 					{txPayload ? "Edit" : "Add"} Transaction
 				</Text>
@@ -148,6 +150,7 @@ export default function AddTransaction({ navigation, route }: any) {
 					containerStyle={styles.textfield}
 					style={{ color: "lightgrey" }}
 					labelColor="grey"
+					testID="nameField"
 				/>
 				<MaskedInput
 					renderMaskedText={renderPrice}
@@ -156,6 +159,7 @@ export default function AddTransaction({ navigation, route }: any) {
 					onChangeText={(value) => {
 						setAmount(value);
 					}}
+					testID="amountMaskedField"
 				/>
 				<TextField
 					label="Description"
@@ -165,6 +169,7 @@ export default function AddTransaction({ navigation, route }: any) {
 					containerStyle={styles.textfield}
 					style={{ color: "lightgrey" }}
 					labelColor="grey"
+					testID="descField"
 				/>
 				<RadioGroup
 					initialValue={type}
@@ -182,12 +187,14 @@ export default function AddTransaction({ navigation, route }: any) {
 						labelStyle={{ color: "lightgrey" }}
 						value="expense"
 						label="Expense"
+						testID="expenseRadioButton"
 					/>
 					<RadioButton
 						color="lightgrey"
 						labelStyle={{ color: "lightgrey" }}
 						value="income"
 						label="Income"
+						testID="incomeRadioButton"
 					/>
 				</RadioGroup>
 				<Picker
@@ -209,6 +216,7 @@ export default function AddTransaction({ navigation, route }: any) {
 					// @ts-expect-error
 					listProps={{ style: { marginBottom: 180 } }}
 					style={{ color: "lightgrey" }}
+					testID="categoryPicker"
 				>
 					{options.map((option) => (
 						<Picker.Item
@@ -218,6 +226,7 @@ export default function AddTransaction({ navigation, route }: any) {
 							labelStyle={{ color: "grey" }}
 							// @ts-ignore
 							selectedIconColor="lightgrey"
+							testID={`categoryPickerItem:${option.value}`}
 						/>
 					))}
 				</Picker>
@@ -231,10 +240,21 @@ export default function AddTransaction({ navigation, route }: any) {
 					value={date}
 					themeVariant="light"
 					style={{ color: "lightgrey" }}
+					testID="dateTimePicker"
 				/>
 				<View style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
-					<Button backgroundColor="#333" label="Cancel" onPress={onCancel} />
-					<Button backgroundColor="#333" label="Save" onPress={onSave} />
+					<Button
+						backgroundColor="#333"
+						label="Cancel"
+						onPress={onCancel}
+						testID="cancelButton"
+					/>
+					<Button
+						backgroundColor="#333"
+						label="Save"
+						onPress={onSave}
+						testID="saveButton"
+					/>
 				</View>
 			</SafeAreaView>
 		</View>

@@ -24,6 +24,7 @@ export default function FloatingButton(props: any) {
 				elevation: 5,
 			}}
 			onPress={props.onPress}
+			testID={props.testID || "floatingButton"}
 		>
 			<Ionicons name={props.icon} size={32} color="#041C32" />
 		</TouchableOpacity>

@@ -7,6 +7,7 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
+import { LogBox } from "react-native";
 
 import Home from "./screens/Home";
 import Transactions from "./screens/Transactions";
@@ -42,6 +43,7 @@ const RootStack = () => {
 };
 
 export default function App() {
+	LogBox.ignoreAllLogs();
 	return (
 		<SafeAreaProvider>
 			<NavigationContainer>

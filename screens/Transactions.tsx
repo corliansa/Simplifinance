@@ -136,6 +136,7 @@ export default function Transactions({ navigation }: any) {
 					onPress={() =>
 						navigation.navigate("AddTransaction", { txPayload: props.tx })
 					}
+					testID={`editTransaction:${props.tx.id}`}
 				>
 					<Text style={{ color: "#333" }}>Edit</Text>
 				</TouchableOpacity>
@@ -151,6 +152,7 @@ export default function Transactions({ navigation }: any) {
 						width: 70,
 					}}
 					onPress={() => deleteTransactionAsync(props.tx.id)}
+					testID={`deleteTransaction:${props.tx.id}`}
 				>
 					<Text style={{ color: "#333" }}>Delete</Text>
 				</TouchableOpacity>
@@ -164,7 +166,7 @@ export default function Transactions({ navigation }: any) {
 				rightThreshold={-200}
 				renderRightActions={() => <RenderRightActions tx={item} />}
 			>
-				<TouchableOpacity>
+				<TouchableOpacity testID={`transaction:${item.id}`}>
 					<View
 						style={{
 							flexDirection: "row",
@@ -263,6 +265,7 @@ export default function Transactions({ navigation }: any) {
 									? "coral"
 									: "lightblue",
 						}}
+						testID="totalAmountText"
 					>
 						{formatMoney(Math.abs(incomeAmount) - Math.abs(expenseAmount))}
 					</Text>
@@ -285,7 +288,10 @@ export default function Transactions({ navigation }: any) {
 					justifyContent: "center",
 				}}
 			>
-				<Text style={{ color: "white", fontSize: 18 }}>
+				<Text
+					style={{ color: "white", fontSize: 18 }}
+					testID="noTransactionsText"
+				>
 					No transactions found
 				</Text>
 			</View>
@@ -303,14 +309,23 @@ export default function Transactions({ navigation }: any) {
 						width: Dimensions.get("window").width - 40,
 					}}
 				>
-					<TouchableOpacity onPress={() => setCurrent(current - 1)}>
+					<TouchableOpacity
+						onPress={() => setCurrent(current - 1)}
+						testID="monthPrevButton"
+					>
 						<Ionicons name="chevron-back" size={32} color="white" />
 					</TouchableOpacity>
-					<Text style={{ color: "white", fontSize: 28, fontWeight: "400" }}>
+					<Text
+						style={{ color: "white", fontSize: 28, fontWeight: "400" }}
+						testID="currentMonthText"
+					>
 						{new Date(startDate).toLocaleString("en", { month: "long" })}{" "}
 						{new Date(startDate).getFullYear()}
 					</Text>
-					<TouchableOpacity onPress={() => setCurrent(current + 1)}>
+					<TouchableOpacity
+						onPress={() => setCurrent(current + 1)}
+						testID="monthNextButton"
+					>
 						<Ionicons name="chevron-forward" size={32} color="white" />
 					</TouchableOpacity>
 				</View>
@@ -368,6 +383,7 @@ export default function Transactions({ navigation }: any) {
 			<FloatingButton
 				icon="add"
 				onPress={() => navigation.navigate("AddTransaction")}
+				testID="addTransactionButton"
 			/>
 		</View>
 	);

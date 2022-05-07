@@ -32,6 +32,7 @@ export default function Home({ navigation }: any) {
 							endDate,
 						})
 					);
+				else setTransactions([]);
 			} else {
 				setTransactions([]);
 			}
@@ -53,7 +54,10 @@ export default function Home({ navigation }: any) {
 		<View style={styles.container}>
 			<StatusBar style="light" />
 			<SafeAreaView style={styles.main}>
-				<Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+				<Text
+					style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
+					testID="homeText"
+				>
 					{`Hello there,\nYou have spent ${formatMoney(
 						Math.abs(expenseAmount)
 					)} out of ${formatMoney(
@@ -61,7 +65,7 @@ export default function Home({ navigation }: any) {
 					)} this month.\nHave a nice day!`}
 				</Text>
 				{Math.abs(incomeAmount) - Math.abs(expenseAmount) < 0 ? (
-					<Text style={{ color: "coral" }}>
+					<Text style={{ color: "coral" }} testID="homeExtraText">
 						Uh-oh. Looks like you spend more than your income this month!
 					</Text>
 				) : null}
@@ -69,6 +73,7 @@ export default function Home({ navigation }: any) {
 			<FloatingButton
 				icon="chevron-forward"
 				onPress={() => navigation.navigate("Transactions")}
+				testID="homeButton"
 			/>
 		</View>
 	);

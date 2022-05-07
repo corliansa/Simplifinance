@@ -1,0 +1,55 @@
+{
+	"testRunner": "jest",
+	"runnerConfig": "e2e/config.json",
+	"skipLegacyWorkersInjection": true,
+	"apps": {
+		"expo.app": {
+			"type": "ios.app",
+			"binaryPath": "./e2e/bin/Exponent"
+		},
+		"dev.app": {
+			"type": "ios.app",
+			"binaryPath": "./e2e/bin/Simplidev.app"
+		},
+		"ios": {
+			"type": "ios.app",
+			"binaryPath": "./e2e/bin/Simplifinance.app"
+		},
+		"android": {
+			"type": "android.apk",
+			"binaryPath": "SPECIFY_PATH_TO_YOUR_APP_BINARY"
+		}
+	},
+	"devices": {
+		"simulator": {
+			"type": "ios.simulator",
+			"device": {
+				"type": "iPhone 11"
+			}
+		},
+		"emulator": {
+			"type": "android.emulator",
+			"device": {
+				"avdName": "Pixel_3a_API_30_x86"
+			}
+		}
+	},
+	"configurations": {
+		"expo": {
+			"device": "simulator",
+			"app": "expo.app"
+		},
+		"dev": {
+			"device": "simulator",
+			"app": "dev.app"
+		},
+		"ios": {
+			"device": "simulator",
+			"app": "ios"
+		},
+		"android": {
+			"device": "emulator",
+			"app": "android"
+		}
+	}
+}
